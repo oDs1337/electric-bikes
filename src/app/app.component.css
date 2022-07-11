@@ -1,5 +1,18 @@
+.websiteBody{
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  border: 1px solid red;
+}
 .router{
   width: 75%;
+  height: 100%;
+
+  border: 1px solid red;
+}
+.shoppingCart{
+  width: 25%;
   height: 100%;
 
   border: 1px solid red;

@@ -8,13 +8,15 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { StoreItemsComponent } from './store-items/store-items.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
-    StoreItemsComponent
+    StoreItemsComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
