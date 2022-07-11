@@ -4,4 +4,5 @@ export interface Ebike {
   description: string,
   price: number,
   currency: string,
+  count: number,
 }

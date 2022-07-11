@@ -7,6 +7,7 @@ export const ebikes: Ebike[] = [
     description: "bike with green color",
     price: 1350,
     currency: "EUR",
+    count: 0,
   },
   {
     image: "https://gilickibike.pl/7285-home_default/ROWER-M-BIKE-T-BIKE-9-2-LADY-L-WHITE-PINK.jpg",
@@ -14,6 +15,7 @@ export const ebikes: Ebike[] = [
     description: "bike with white color",
     price: 1550,
     currency: "EUR",
+    count: 0,
   },
   {
     image: "https://peleton.pl/wp-content/uploads/2021/07/ROWER-KROSS-29%E2%80%B3-M-LEVEL-1.0-S-cz-150x150.jpg",
@@ -21,6 +23,7 @@ export const ebikes: Ebike[] = [
     description: "bike with yellow color",
     price: 7525,
     currency: "EUR",
+    count: 0,
   },
   {
     image: "https://bukbike.pl/wp-content/uploads/2021/07/Qki-16-niebieski-150x150.png",
@@ -28,6 +31,7 @@ export const ebikes: Ebike[] = [
     description: "bike with blue color",
     price: 7525,
     currency: "EUR",
+    count: 0,
   },
   {
     image: "https://bukbike.pl/wp-content/uploads/2021/07/Qki-roz-150x150.png",
@@ -35,5 +39,6 @@ export const ebikes: Ebike[] = [
     description: "bike with pink color",
     price: 7525,
     currency: "EUR",
+    count: 0,
   }
 ]
