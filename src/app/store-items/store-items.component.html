@@ -1,5 +1,15 @@
 <p>store-items works!</p>
+<div class="store">
+  <ng-container *ngFor="let bike of ebikesList">
+    <div class="bike">
+      <img src={{bike.image}} alt="bike image">
+      <div class="bikeInformations">
+        <span>Name: {{bike.name}}</span>
+        <span>Description: {{bike.description}}</span>
+        <span>Price: {{bike.price}} {{bike.currency}}</span>
+        <button>Add to shopping cart</button>
+      </div>
+    </div>
+  </ng-container>
+</div>
 
-<ng-container *ngFor="let bike of ebikesList">
-
-</ng-container>
