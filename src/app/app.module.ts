@@ -26,7 +26,7 @@ import { StoreModule } from '@ngrx/store';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    StoreModule.forRoot({ Ebike: counterReducer }),
+    StoreModule.forRoot({ count: counterReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

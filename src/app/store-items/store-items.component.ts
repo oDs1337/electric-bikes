@@ -14,10 +14,9 @@ import { increment, decrement, remove } from '../state/ebike.actions';
 export class StoreItemsComponent implements OnInit {
 
   ebikesList?: Ebike[];
-  count$: Observable<number>;
+  //count$: Observable<number>;
 
   constructor(private ebikeService: BikeService, private store: Store<Ebike>) {
-    this.count$ = store.select('count');
    }
 
   ngOnInit(): void {
@@ -30,7 +29,7 @@ export class StoreItemsComponent implements OnInit {
   }
 
   increment(){
-    this.store.dispatch(increment());
+     this.store.dispatch(increment());
   }
 
   decrement(){
