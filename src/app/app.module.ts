@@ -1,3 +1,5 @@
+import { counterReducer } from './state/ebike.reducer';
+import { Ebike } from './ebike';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -24,7 +26,7 @@ import { StoreModule } from '@ngrx/store';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ Ebike: counterReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

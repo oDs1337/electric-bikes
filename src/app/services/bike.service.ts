@@ -8,8 +8,6 @@ import { Injectable } from '@angular/core';
 })
 export class BikeService {
 
-  ebikes = new Observable<Ebike[]>;
-
   constructor() { }
 
   getEbikes(): Observable<Ebike[]>{
