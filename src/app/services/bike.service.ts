@@ -1,3 +1,4 @@
+import { Observable, of } from 'rxjs';
 import { Ebike } from './../ebike';
 import { ebikes } from './../database/ebikes';
 import { Injectable } from '@angular/core';
@@ -7,12 +8,12 @@ import { Injectable } from '@angular/core';
 })
 export class BikeService {
 
-  #ebikes: Ebike[] = ebikes;
+  ebikes = new Observable<Ebike[]>;
 
   constructor() { }
 
-  getEbikes(): Ebike[]{
-    return this.#ebikes;
+  getEbikes(): Observable<Ebike[]>{
+    return of(ebikes);
   }
 
 }

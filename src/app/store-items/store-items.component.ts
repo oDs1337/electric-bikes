@@ -1,5 +1,6 @@
+import { Subscription, Observable } from 'rxjs';
 import { Ebike } from './../ebike';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BikeService } from '../services/bike.service';
 
 @Component({
@@ -9,12 +10,17 @@ import { BikeService } from '../services/bike.service';
 })
 export class StoreItemsComponent implements OnInit {
 
-  ebikesList: Ebike[] = [];
+  ebikesList?: Ebike[];
 
   constructor(private ebikeService: BikeService) { }
 
   ngOnInit(): void {
-    this.ebikesList = this.ebikeService.getEbikes();
+    this.fetchBooks();
+  }
+
+  fetchBooks(): void{
+    this.ebikeService.getEbikes()
+      .subscribe(items => this.ebikesList = items);
   }
 
 }
