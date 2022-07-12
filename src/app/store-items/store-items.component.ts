@@ -1,6 +1,6 @@
 import { Ebike } from './../ebike';
 import { Component, OnInit } from '@angular/core';
-import { ebikes } from '../database/ebikes';
+import { BikeService } from '../services/bike.service';
 
 @Component({
   selector: 'app-store-items',
@@ -9,11 +9,12 @@ import { ebikes } from '../database/ebikes';
 })
 export class StoreItemsComponent implements OnInit {
 
-  ebikesList: Ebike[] = ebikes;
+  ebikesList: Ebike[] = [];
 
-  constructor() { }
+  constructor(private ebikeService: BikeService) { }
 
   ngOnInit(): void {
+    this.ebikesList = this.ebikeService.getEbikes();
   }
 
 }
