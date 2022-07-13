@@ -12,6 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { StoreItemsComponent } from './store-items/store-items.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -26,7 +28,10 @@ import { StoreModule } from '@ngrx/store';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot({ bikes: counterReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

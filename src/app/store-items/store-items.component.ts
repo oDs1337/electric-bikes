@@ -16,16 +16,17 @@ export class StoreItemsComponent implements OnInit {
   ebikesList?: Ebike[];
   //count$: Observable<number>;
 
-  constructor(private ebikeService: BikeService, private store: Store<Ebike>) {
+  constructor(private ebikeService: BikeService, private store: Store<{bikes: Ebike[]}>) {
    }
 
   ngOnInit(): void {
-    this.fetchBooks();
+    this.ebikeService.getEbikes();
+    this.fetchBikes();
+    console.log(this.ebikesList);
   }
 
-  fetchBooks(): void{
-    this.ebikeService.getEbikes()
-      .subscribe(items => this.ebikesList = items);
+  fetchBikes(): void{
+    this.store.select((state) => state.bikes).subscribe(items => this.ebikesList = items);
   }
 
   increment(){
