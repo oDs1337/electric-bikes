@@ -40,12 +40,12 @@ export class StoreItemsComponent implements OnInit {
     this.store.dispatch(increment({index: i}));
   }
 
-  decrement(){
-    this.store.dispatch(decrement());
+  decrement(i: number){
+    this.store.dispatch(decrement({index: i}));
   }
 
-  remove(){
-    this.store.dispatch(remove());
+  remove(i: number){
+    this.store.dispatch(remove({index: i}));
   }
 
 }

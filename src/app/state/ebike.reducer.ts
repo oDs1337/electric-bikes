@@ -7,23 +7,19 @@ export const initialState: Ebike[] = [];
 export const counterReducer = createReducer(
   initialState,
   on(increment, (state: Ebike[], action) => {
-    const test = state
-    test[action.index].count += 1
-    return [...state]
+    const newState = JSON.parse(JSON.stringify(state));
+    newState[action.index].count += 1;
+    return newState;
   }),
-  // on(increment, (state: Ebike[], action) => {
-
-  //   const newState: any[] = state.map(obj => {
-  //     if (obj.name === state[action.index].name){
-  //       return {...state, count: obj.count + 1};
-  //     }
-  //     else{
-  //       return {...state}
-  //     }
-  //   })
-  //   return [...newState]
-  // }),
-  // on(decrement, (state: Ebike) => ({...state, count: state.count - 1})),
-  // on(remove, (state: Ebike) => ({...state, count: 0})),
+  on(decrement, (state: Ebike[], action) => {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState[action.index].count -= 1;
+    return newState;
+  }),
+  on(remove, (state, action) => {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState[action.index].count = 0;
+    return newState;
+  }),
   on(saveBikes, (state, action) => action.ebikes),
 );
