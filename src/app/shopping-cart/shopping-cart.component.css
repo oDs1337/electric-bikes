@@ -1,0 +1,14 @@
+.cart{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.cartItems{
+  width: 400px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid red;
+}

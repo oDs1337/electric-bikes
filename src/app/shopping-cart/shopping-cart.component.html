@@ -1,1 +1,9 @@
 <p>shopping-cart works!</p>
+<div class="cart">
+  <ng-container *ngFor="let bike of ebikesList; let i = index">
+    <div *ngIf="bike.count > 0" class="cartItems">
+      <span>Name: {{bike.name}}</span>
+      <span>Count: {{bike.count}}</span>
+    </div>
+  </ng-container>
+</div>
