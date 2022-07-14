@@ -1,6 +1,6 @@
 <p>store-items works!</p>
 <div class="store">
-  <ng-container *ngFor="let bike of ebikesList">
+  <ng-container *ngFor="let bike of ebikesList; let i = index">
     <div class="bike">
       <img src={{bike.image}} alt="bike image">
       <div class="bikeInformations">
@@ -8,7 +8,7 @@
         <span>Description: {{bike.description}}</span>
         <span>Price: {{bike.price}} {{bike.currency}}</span>
         <span>Count: {{bike.count}}</span>
-        <button (click)="increment()">+1</button>
+        <button (click)="increment(i)">+1</button>
         <button (click)="decrement()">-1</button>
         <button (click)="remove()">remove</button>
       </div>

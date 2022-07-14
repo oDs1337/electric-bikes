@@ -22,15 +22,22 @@ export class StoreItemsComponent implements OnInit {
   ngOnInit(): void {
     this.ebikeService.getEbikes();
     this.fetchBikes();
-    console.log(this.ebikesList);
   }
 
   fetchBikes(): void{
-    this.store.select((state) => state.bikes).subscribe(items => this.ebikesList = items);
+    this.store.select((state) => state.bikes).subscribe((items) => {
+      this.ebikesList = items;
+    });
   }
 
-  increment(){
-     this.store.dispatch(increment());
+  updateCounter(i: number): void{
+    this.store.select('bikes').forEach((items) => {
+      this.ebikesList![i].count = items[i].count;
+    })
+  }
+
+  increment(i: number){
+    this.store.dispatch(increment({index: i}));
   }
 
   decrement(){
